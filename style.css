@@ -1,0 +1,548 @@
+/* Reset básico para remover margens, paddings e definir box-sizing para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define tamanho de fonte base para a raiz do documento, facilitando o redimensionamento de fontes em rem */
+:root {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  --scrollbar-thumb-table-tr-color: hsl(191, 31%, 42%);
+  --body-color: hsl(0, 0%, 0%);
+  --search-input-color: hsl(240, 6%, 51%);
+  --search-input-table-tr-noFav-color: hsl(191, 65%, 7%);
+  --search-button-hover-color: hsl(195, 91%, 25%);
+  --search-button-hover-background-color: hsl(0, 0%, 100%);
+  --table-box-shadow-color: hsla(0, 0%, 0%, 0.251);
+  --table-color: hsl(240, 9%, 89%);
+  --table-th-color: hsl(195, 89%, 14%);
+  --table-tr-nth-child-color: hsla(194, 64%, 6%, 0.502);
+  --td-user-color: hsl(0, 0%, 65%);
+  --td-remove-color: hsl(0, 100%, 50%);
+  --td-remove--hover-color: hsl(355, 91%, 66%);
+  --noFav-color: hsl(189, 4%, 32%);
+}
+
+/* Estilos personalizados para a barra de rolagem para todos os elementos */
+*::-webkit-scrollbar {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  /* Cria barras de rolagem totalmente arredondadas */
+}
+
+/* Estilo para o canto da barra de rolagem, tornando-o transparente */
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* Estilo para o polegar da barra de rolagem */
+*::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: transparent;
+  border-radius: 8rem;
+  box-shadow: inset 0 0 0px 6px var(--scrollbar-thumb-table-tr-color);
+  /* Efeito de borda colorida interna */
+  border: solid 8px transparent;
+}
+
+/* Estilos globais para o body */
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  /* Define a fonte global como Roboto */
+  background-color: var(--body-color);
+  /* Cor de fundo preta para o corpo da página */
+  font-weight: bold;
+  /* Torna o texto globalmente em negrito */
+  height: 100vh;
+  /* Altura completa da janela de visualização */
+}
+
+/* Classe utilitária para ocultar conteúdo acessível apenas por leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Container principal da aplicação */
+#app {
+  max-width: 112rem;
+  /* Largura máxima do aplicativo */
+  margin: 0 auto;
+  /* Centraliza na página */
+  padding: 2rem;
+  /* Padding para o interior */
+}
+
+/* Cabeçalho da aplicação, com estilo flex para alinhamento */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 11.5rem 0 8.7rem;
+  /* Margens verticais para espaçamento */
+}
+
+/* Estilização da barra de pesquisa */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  /* Espaço entre elementos dentro da barra de pesquisa */
+}
+
+/* Input de pesquisa */
+.search input {
+  height: 4.8rem;
+  padding: 1.6rem;
+  min-width: 46.2rem;
+  /* Largura mínima do input */
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: var(--search-input-color);
+  /* Cor do texto do input */
+  border-radius: 0.5rem;
+  /* Bordas arredondadas */
+  background-color: var(--search-input-table-tr-noFav-color);
+  /* Cor de fundo */
+  border: 1px solid transparent;
+  /* Borda transparente */
+}
+
+/* Botão de pesquisa */
+.search button {
+  background-color: var(--search-button-hover-color);
+  /* Cor de fundo do botão */
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 3.2rem;
+  color: var(--search-button-hover-background-color);
+  /* Cor do texto */
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+  height: 4.8rem;
+}
+
+/* Ícone dentro do botão de pesquisa */
+.search button img {
+  width: 2.4rem;
+}
+
+/* Efeito de hover para o botão de pesquisa */
+.search button:hover {
+  background-color: var(--search-button-hover-background-color);
+  /* Cor de fundo ao passar o mouse */
+  color: var(--search-button-hover-color);
+  /* Cor do texto ao passar o mouse */
+}
+
+/* Filtro aplicado ao ícone dentro do botão ao passar o mouse */
+.search button:hover .star {
+  filter: invert(25%) sepia(20%) saturate(4875%) hue-rotate(166deg) brightness(50%) contrast(95%);
+}
+
+/* Classe para ocultar elementos e dispositivos de pesquisa específicos */
+.hide,
+.search .device {
+  display: none;
+}
+
+/* Estilização para a tabela dentro de .table */
+.table {
+  border: 1px solid var(--scrollbar-thumb-table-tr-color);
+  /* Cor da borda */
+  border-radius: 1.2rem;
+  /* Bordas arredondadas */
+  overflow-x: auto;
+  /* Habilita rolagem horizontal quando necessário */
+  max-height: 61.1rem;
+  /* Altura máxima */
+}
+
+/* Estilos para a tabela */
+table {
+  width: 100%;
+  /* Largura total */
+  border-collapse: collapse;
+  /* Colapsa as bordas das células */
+  box-shadow: 0 1rem 2rem -1rem var(--table-box-shadow-color);
+  /* Sombra para a tabela */
+}
+
+/* Estilos para elementos dentro da tabela */
+table * {
+  font-size: 2rem;
+  /* Tamanho da fonte para texto dentro da tabela */
+  color: var(--table-color);
+  /* Cor do texto */
+  line-height: 3.2rem;
+  /* Altura da linha */
+}
+
+/* Cabeçalho da tabela */
+table th {
+  background-color: var(--table-th-color);
+  /* Cor de fundo do cabeçalho */
+  text-align: left;
+  /* Alinhamento do texto */
+  padding: 1.6rem 4rem;
+  /* Padding interno */
+}
+
+/* Bordas arredondadas para o primeiro e último cabeçalho */
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+/* Estilos alternados para linhas da tabela */
+table tr:nth-child(odd) {
+  background-color: var(--table-tr-nth-child-color);
+  /* Cor de fundo para linhas ímpares */
+}
+
+table tr:nth-child(even) {
+  background-color: var(--search-input-table-tr-noFav-color);
+  /* Cor de fundo para linhas pares */
+  border: 0.1rem solid var(--scrollbar-thumb-table-tr-color);
+  /* Borda para linhas pares */
+}
+
+/* Células da tabela */
+table td {
+  padding: 2.4rem 4rem;
+  /* Padding interno */
+  text-align: left;
+  /* Alinhamento do texto */
+}
+
+/* Estilos para o usuário dentro de uma célula */
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  /* Espaço entre elementos dentro da célula */
+}
+
+/* Link dentro da célula do usuário */
+td.user a {
+  text-decoration: none;
+  /* Remove o sublinhado do link */
+}
+
+/* Span dentro da célula do usuário */
+td.user span {
+  font-weight: normal;
+  /* Peso da fonte normal para o texto */
+}
+
+/* Efeito de hover para o span dentro da célula do usuário */
+td.user span:hover {
+  color: var(--td-user-color);
+  /* Cor do texto ao passar o mouse */
+}
+
+/* Imagem do usuário dentro da célula */
+td.user img {
+  width: 5.6rem;
+  /* Largura da imagem */
+  height: 5.6rem;
+  /* Altura da imagem */
+  object-fit: cover;
+  /* Garante que a imagem cubra o espaço disponível */
+  border-radius: 50%;
+  /* Torna a imagem circular */
+}
+
+/* Botão de remover dentro da célula */
+td .remove {
+  border: none;
+  background-color: transparent;
+  /* Fundo transparente */
+  color: var(--td-remove-color);
+  /* Cor do texto vermelho para destacar a ação de remover */
+  font-size: 2rem;
+  /* Tamanho da fonte */
+  font-weight: bold;
+  /* Texto em negrito */
+  cursor: pointer;
+  /* Cursor de ponteiro para indicar ação clicável */
+}
+
+/* Efeito de hover para o botão de remover */
+td .remove:hover {
+  color: var(--td-remove--hover-color);
+  /* Cor do texto ao passar o mouse */
+}
+
+/* Estilos para o caso de não haver favoritos */
+.noFav {
+  background-color: var(--search-input-table-tr-noFav-color);
+  /* Cor de fundo */
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  /* Tamanho da fonte grande para destaque */
+  color: var(--noFav-color);
+  /* Cor do texto */
+  gap: 6rem;
+  /* Espaço entre elementos */
+  padding: 21rem;
+  /* Acolchoamento substancial para centralizar o conteúdo verticalmente */
+}
+
+/* Imagem dentro da seção 'noFav' */
+.noFav img {
+  width: 13.2rem;
+  /* Define a largura da imagem */
+}
+
+/* Responsividade para dispositivos com largura máxima de 1062px */
+@media (max-width: 1062px) {
+  .noFav {
+    padding: 21rem 2rem;
+    /* Ajusta o padding para dispositivos mais estreitos */
+  }
+}
+
+/* Responsividade para dispositivos com largura máxima de 890px */
+@media (max-width: 890px) {
+  header {
+    flex-direction: column;
+    /* Altera a disposição dos elementos para vertical */
+    gap: 1.6rem;
+    margin: 6rem 0 4.5rem;
+    /* Ajusta as margens para manter o conteúdo centralizado */
+  }
+
+  #app {
+    max-width: 100vw;
+    /* Utiliza 100% da largura da viewport */
+    margin: 0 auto;
+    padding: 4rem;
+    /* Aumenta o padding para melhor visualização em dispositivos menores */
+  }
+
+  .search input {
+    padding: 1.6rem;
+    min-width: 38.2rem;
+    /* Ajusta a largura mínima do input de pesquisa */
+    font-size: 1.4rem;
+    /* Reduz o tamanho da fonte para melhor ajuste */
+  }
+
+  .search button {
+    padding: 0.6rem 1.6rem;
+    font-size: 1.2rem;
+    /* Reduz o tamanho da fonte do botão */
+  }
+
+  .search button img {
+    width: 1.8rem;
+    /* Reduz a largura da imagem dentro do botão */
+  }
+
+  table * {
+    max-width: 100%;
+    /* Garante que o conteúdo da tabela não ultrapasse a largura do container */
+    font-size: 1.6rem;
+    /* Ajusta o tamanho da fonte dentro da tabela */
+  }
+
+  table th {
+    text-align: center;
+    /* Centraliza o texto do cabeçalho */
+    padding: 0.8rem 2rem;
+    /* Ajusta o padding do cabeçalho */
+  }
+
+  table td {
+    padding: 1.2rem 2rem;
+    /* Ajusta o padding das células */
+    text-align: center;
+    /* Centraliza o texto nas células */
+  }
+
+  td.user {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+    /* Mantém o texto alinhado à esquerda dentro da célula do usuário */
+  }
+
+  td .remove {
+    font-size: 1.6rem;
+    /* Ajusta o tamanho da fonte do botão de remover */
+  }
+
+  .noFav {
+    font-size: 3.2rem;
+    /* Reduz o tamanho da fonte para dispositivos menores */
+    gap: 3rem;
+    /* Reduz o espaço entre elementos dentro de .noFav */
+  }
+
+  .noFav img {
+    width: 9.2rem;
+    /* Ajusta a largura da imagem */
+  }
+}
+
+/* Responsividade para dispositivos com largura máxima de 672px */
+@media (max-width: 672px) {
+  header {
+    margin: 3rem 0 3rem;
+    /* Reduz a margem superior e inferior para espaços menores */
+  }
+
+  #app {
+    padding: 2rem;
+    /* Reduz o padding */
+  }
+
+  .search input {
+    padding: 0.8rem;
+    min-width: 30.2rem;
+    /* Reduz ainda mais a largura mínima do input */
+    font-size: 1.2rem;
+    /* Reduz o tamanho da fonte */
+  }
+
+  .search button img {
+    width: 1.4rem;
+    /* Reduz ainda mais a largura da imagem no botão */
+  }
+
+  table * {
+    font-size: 1.4rem;
+    /* Reduz o tamanho da fonte nas células da tabela */
+  }
+
+  table th {
+    padding: 0;
+    /* Remove o padding do cabeçalho para economizar espaço */
+  }
+
+  td.user {
+    padding-left: 0.8rem;
+    /* Ajusta o padding esquerdo */
+  }
+
+  td.user img {
+    width: 4rem;
+    /* Reduz o tamanho da imagem do usuário */
+    height: 4rem;
+    /* Mantém a altura proporcional à nova largura */
+  }
+
+  td.user p {
+    line-height: 2.8rem;
+    /* Ajusta a altura da linha para o texto no perfil do usuário */
+  }
+
+  table td {
+    padding: 0;
+    /* Remove o padding das células para economizar espaço */
+  }
+
+  td .remove {
+    font-size: 1.4rem;
+    /* Reduz o tamanho da fonte do botão de remover */
+    padding-right: 0.8rem;
+    /* Ajusta o padding direito */
+  }
+
+  .noFav {
+    font-size: 2.4rem;
+    /* Reduz ainda mais o tamanho da fonte para melhor adequação */
+    gap: 1.6rem;
+    /* Ajusta o espaço entre os elementos */
+  }
+
+  .noFav img {
+    width: 5.7rem;
+    /* Reduz a largura da imagem */
+  }
+}
+
+/* Responsividade para dispositivos extremamente pequenos, com largura máxima de 465px */
+@media (max-width: 465px) {
+  .search input {
+    padding: 0;
+    text-align: center;
+    /* Centraliza o texto dentro do input */
+  }
+
+  .search button {
+    display: none;
+    /* Oculta o botão de pesquisa em dispositivos muito pequenos */
+  }
+
+  .search .device {
+    display: flex;
+    /* Exibe alternativas de dispositivos em tamanhos muito pequenos */
+  }
+
+  .table {
+    width: 100%;
+    /* Ajusta a largura da tabela para 100% */
+    overflow-x: auto;
+    /* Permite rolagem horizontal da tabela */
+  }
+
+  td.user {
+    display: flex;
+    flex-direction: column;
+    /* Altera a disposição dos elementos do usuário para vertical */
+    text-align: center;
+    /* Centraliza o texto do perfil do usuário */
+    padding: 0.8rem 0 0;
+    /* Ajusta o padding */
+  }
+
+  td .remove {
+    padding: 0;
+    /* Remove o padding do botão de remover */
+  }
+}
+
+/* Ajustes finais para dispositivos muito pequenos, com largura máxima de 400px */
+@media (max-width: 400px) {
+  .search input {
+    min-width: 26.2rem;
+    /* Ajusta a largura mínima do input */
+  }
+
+  .noFav {
+    text-align: center;
+    /* Centraliza o texto dentro de .noFav */
+    gap: 1.5rem;
+    /* Ajusta o espaço entre os elementos */
+  }
+
+  .noFav img {
+    width: 10.2rem;
+    /* Ajusta a largura da imagem */
+  }
+}

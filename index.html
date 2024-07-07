@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Define a codificação de caracteres como UTF-8 e configura a visualização para dispositivos móveis -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preconecta com Google Fonts e permite compartilhamento de recursos cruzados para otimizar o carregamento das fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Inclui a família de fontes 'Roboto' do Google Fonts e define o ícone da aba para o site -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/Vector.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Título da página no navegador -->
+  <title>GitFav</title>
+
+  <!-- Importa o script JavaScript principal como módulo -->
+  <script type="module" src="/js/index.js"></script>
+</head>
+
+<body>
+  <!-- Contêiner principal da aplicação -->
+  <div id="app">
+    <!-- Cabeçalho da página, incluindo logotipo e barra de pesquisa -->
+    <header>
+      <!-- Link para página inicial ou funcionalidade similar -->
+      <a href=""><img src="/assets/Gitfav.svg" alt="Logo GitFav"></a>
+      <div class="search">
+        <!-- Acessibilidade: Label para entrada de pesquisa não visível visualmente mas acessível por leitores de tela -->
+        <label class="sr-only" for="input-search">Usuário do GitHub</label>
+        <!-- Campo de entrada para pesquisa de usuário do GitHub -->
+        <input id="input-search" type="text" placeholder="Digite o GitHub username que quer favoritar">
+        <!-- Botão para adicionar usuário aos favoritos -->
+        <button class="btnFav"><img class="star" src="/assets/Vector.svg" alt="estrela">FAVORITAR</button>
+        <!-- Botão alternativo para dispositivos móveis -->
+        <button class="btnFav device"><img class="star" src="/assets/Vector.svg" alt="estrela"></button>
+      </div>
+    </header>
+
+    <!-- Área principal para exibição de dados de usuário favoritado -->
+    <div class="table">
+      <!-- Tabela para listar informações de usuários favoritados -->
+      <table>
+        <thead>
+          <!-- Cabeçalhos da tabela -->
+          <tr>
+            <th>Usuário</th>
+            <th>Repositórios</th>
+            <th>Followers</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody> <!-- Corpo da tabela, preenchido dinamicamente -->
+      </table>
+      <!-- Exibe quando não há favoritos -->
+      <div class="zeroFav">
+        <img src="/assets/Estrela.svg" alt="estrela">
+        <p>Nenhum favorito ainda</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

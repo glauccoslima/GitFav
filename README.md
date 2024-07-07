@@ -2,7 +2,7 @@
 
 Este projeto é um sistema interativo chamado GitFav, onde os usuários podem gerenciar uma lista de usuários do GitHub como favoritos, adicionando ou removendo entradas conforme desejado.
 
-🌐 [**Explore o GitFav Online! Visite o site!**]() 👈
+🌐 [**Explore o GitFav Online! Visite o site!**](https://git-fav-ochre.vercel.app/) 👈
 
 ## Índice
 

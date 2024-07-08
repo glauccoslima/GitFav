@@ -5,6 +5,14 @@
       "destination": "/api/index.js"
     },
     {
+      "source": "/js/:path*",
+      "destination": "/js/:path*"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
       "source": "/:path*",
       "destination": "/index.html"
     }

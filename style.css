@@ -494,11 +494,6 @@ td .remove:hover {
     /* Centraliza o texto dentro do input */
   }
 
-  .search .device {
-    display: flex;
-    /* Exibe alternativas de dispositivos em tamanhos muito pequenos */
-  }
-
   .table {
     width: 100%;
     /* Ajusta a largura da tabela para 100% */

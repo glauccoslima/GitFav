@@ -76,6 +76,8 @@ body {
 
 /* Container principal da aplicação */
 #app {
+  display: grid;
+  place-content: center;
   max-width: 112rem;
   /* Largura máxima do aplicativo */
   margin: 0 auto;

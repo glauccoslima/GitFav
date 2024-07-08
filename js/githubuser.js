@@ -13,12 +13,12 @@ export class GithubUser {
               if (response.status === 404) {
                   return null;
               }
-              // Lança um erro se houver um problema com a solicitação
+              // Lança um erro se houver um problema com a solicitação.
               throw new Error(`Erro ao buscar usuário: ${response.status} ${response.statusText}`);
           }
           // Converte a resposta da API para JSON.
           const data = await response.json();
-          // Verifica se a resposta contém os dados mínimos necessários.
+          // Verifica se a resposta contém os dados mínimos necessários
           if (!data.login) {
               throw new Error("Dados insuficientes retornados pela API.");
           }

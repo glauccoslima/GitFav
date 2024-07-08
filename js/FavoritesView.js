@@ -5,7 +5,7 @@ export class FavoritesView extends Favorites {
     constructor(root) {
         super(root); // Inicializa a classe base com o elemento raiz do DOM.
         this.tbody = this.root.querySelector('table tbody'); // Acessa a tabela para manipulações diretas.
-        this.update();  // Atualiza a visualização inicial com base nos dados atuais.
+        this.update();  // Atualiza a visualização inicial com base nos dados atuais
         this.onAdd();   // Configura os manipuladores de eventos para adicionar favoritos.
     }
 

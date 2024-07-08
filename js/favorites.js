@@ -1,5 +1,5 @@
 // Importa a classe GithubUser para realizar buscas de usuários na API do GitHub.
-import { GithubUser } from './GithubUser.js';
+import { GithubUser } from './githubuser.js';
 
 // Define a classe Favorites que gerencia a lista de usuários favoritos armazenados.
 export class Favorites {

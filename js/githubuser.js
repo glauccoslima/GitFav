@@ -9,7 +9,7 @@ export class GithubUser {
           const response = await fetch(endpoint);
           // Verifica se a resposta não foi bem-sucedida (usuário não encontrado ou outro erro).
           if (!response.ok) {
-              // Se o usuário não for encontrado, retorna null.
+              // Se o usuário não for encontrado, retorna null
               if (response.status === 404) {
                   return null;
               }

@@ -4,7 +4,7 @@
   "description": "Este projeto é um sistema interativo chamado GitFav, onde os usuários podem gerenciar uma lista de usuários do GitHub como favoritos, adicionando ou removendo entradas conforme desejado.",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'No build necessary'",
+    "build": "echo 'No build steps required'",
     "start": "lite-server",
     "dev": "lite-server",
     "test": "npm-run-all --serial start-server wait-and-test",

@@ -5,7 +5,7 @@ export class GithubUser {
       // Constrói o URL para a API do GitHub, especificando o usuário a ser pesquisado.
       const endpoint = `https://api.github.com/users/${username}`;
       try {
-          // Realiza a chamada à API e aguarda a resposta.
+          // Realiza a chamada à API e aguarda a resposta
           const response = await fetch(endpoint);
           // Verifica se a resposta não foi bem-sucedida (usuário não encontrado ou outro erro).
           if (!response.ok) {

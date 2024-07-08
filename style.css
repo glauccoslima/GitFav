@@ -494,11 +494,6 @@ td .remove:hover {
     /* Centraliza o texto dentro do input */
   }
 
-  .search button {
-    display: none;
-    /* Oculta o botão de pesquisa em dispositivos muito pequenos */
-  }
-
   .search .device {
     display: flex;
     /* Exibe alternativas de dispositivos em tamanhos muito pequenos */

@@ -1,0 +1,22 @@
+{
+  "name": "gitfav",
+  "version": "1.0.0",
+  "description": "Este projeto é um sistema interativo chamado GitFav, onde os usuários podem gerenciar uma lista de usuários do GitHub como favoritos, adicionando ou removendo entradas conforme desejado.",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "npm-run-all --serial start-server wait-and-test",
+    "start-server": "lite-server",
+    "wait-and-test": "wait-on http://localhost:3000 && node tests/test.js",
+    "stop-server": "taskkill /f /im node.exe"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

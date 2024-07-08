@@ -5,7 +5,7 @@ import { GithubUser } from './githubuser.js';
 export class Favorites {
     // Construtor da classe que inicializa a instância com o elemento DOM especificado.
     constructor(root) {
-        // Acessa o elemento raiz onde a interface dos favoritos será montada.
+        // Acessa o elemento raiz onde a interface dos favoritos será montada
         this.root = document.querySelector(root);
         this.tbody = this.root.querySelector('table tbody');
         // Carrega os favoritos existentes do armazenamento local ao iniciar.

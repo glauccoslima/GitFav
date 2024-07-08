@@ -18,7 +18,7 @@ export class GithubUser {
           }
           // Converte a resposta da API para JSON.
           const data = await response.json();
-          // Verifica se a resposta contém os dados mínimos necessários
+          // Verifica se a resposta contém os dados mínimos necessários.
           if (!data.login) {
               throw new Error("Dados insuficientes retornados pela API.");
           }

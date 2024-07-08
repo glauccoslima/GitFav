@@ -16,7 +16,7 @@ export class GithubUser {
               // Lança um erro se houver um problema com a solicitação.
               throw new Error(`Erro ao buscar usuário: ${response.status} ${response.statusText}`);
           }
-          // Converte a resposta da API para JSON.
+          // Converte a resposta da API para JSON
           const data = await response.json();
           // Verifica se a resposta contém os dados mínimos necessários.
           if (!data.login) {

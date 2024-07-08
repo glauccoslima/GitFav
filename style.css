@@ -98,7 +98,7 @@ header {
 /* Estilização da barra de pesquisa */
 .search {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   gap: 0.8rem;
   /* Espaço entre elementos dentro da barra de pesquisa */
 }

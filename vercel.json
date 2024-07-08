@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/public/$1"
+      "destination": "/$1"
     }
   ]
 }
